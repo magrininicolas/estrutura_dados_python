@@ -114,7 +114,6 @@ class LinkedList:
         self.tail = temp
         after = temp.next
         before = None
-
         for _ in range(self.length):
             after = temp.next
             temp.next = before
@@ -135,4 +134,9 @@ print()
 
 my_linked_list.remove(4)
 
+my_linked_list.print_list()
+
+my_linked_list.reverse()
+
+print()
 my_linked_list.print_list()
