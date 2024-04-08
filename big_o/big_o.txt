@@ -1,0 +1,91 @@
+Big O
+
+Time Complexity é o tempo que um código leva para rodar
+Space Complexity é a quantidade memória que um código usa para ser executado
+
+Best Case = Omega
+Average Case = Teta
+Worst Case = Big O
+Big O é sempre pensando no pior cenário (sempre worst case)
+
+O(n) - Proportional
+Algo roda em um tempo de N (Ex.: N = 10 operações)
+
+Ex.:
+def print_items(n):
+    for i in range(n):
+        print(i)
+
+Isto roda em O(n) pois irá rodar em um tempo igual a n
+
+Graficamente é uma curva de 1º Grau
+
+Drop Constants
+Não importa se temos dois FORs que rodam em tempo de N. Não ficará O(2n), o algoritmo sempre permanece como O(n), ou seja, com a notação original de sua constante
+
+O(n^2) - Loop withing a Loop
+O algoritmo roda em tempo de N^2 (Ex.: 10^2 = 100 operações)
+
+Ex.:
+def print_items(n):
+    for i in range(n):
+        for j in range(n):
+            print(i, j)
+
+Graficamente, é uma curva que cresce bem mais rápido que O(n)
+Portanto, um código O(n^2) é muito menos eficiente que um O(n)
+
+Drop Non-Dominants
+O trecho com a pior performance irá determinar a classificação do código. Se tivermos um trecho em O(n^2) e o restante todo em O(n), não importa. O código irá ser classificado como O(n^2)
+
+O(1) - Constant
+Refere-se a um algoritmo que possui apenas uma operação a ser realizada, então ele nunca crescerá
+
+Ex.:
+def add_items(n):
+    return n + n
+
+Graficamente, é uma curva rente ao eixo X, ou seja, ela nunca cresce
+Portanto, é o tipo de código mais eficiente possível. Mas o mais difícil de ser alcançado, se puder ser.
+
+O(log n) - Divide and Conquer
+Refere-se a um algoritmo cujo número de operações baseia-se em 2^? = N ou log2(N). Ex.: 2^? = 8 -> ? = 3 ou log2(8) = 3.
+
+Ex.: Em um algoritmo O(n) de busca, caso tivéssemos 1 bilhão de números, no pior dos casos (que é o que é levado em consideração) precisariámos de 1 bilhão de operações.
+Para O(log n) é possível, neste caso, reduzir a, aprox., 31 operações. Uma redução bem significativa
+
+Graficamente, é uma curva um pouco mais acentuada do que a curva do O(1). Portanto, é um caso bem eficiente
+
+O(nlog n) -> n * log n
+É um caso particular que envolve alguns algoritmos de ordenação, é a forma mais eficiente para estas funções como o merge sort e o quick sort. Para casos que envolvam apenas vários tipos diferentes de dados, é o mais eficiente que se pode chegar para ordená-los
+
+Different terms for inputs
+Soma-se os valores dos parâmetros
+
+Ex1.:
+def print_items(a, b):
+    for i in range(a):
+        print(i)
+
+    for j in range(b):
+        print(j)
+
+Não será O(n) mas sim O(a + b), pois não dá pra simplificar dois parâmetros diferentes como n
+
+Ex2.:"
+def print_items(a, b):
+    for i in range(a):
+        for j in range(b):
+            print(i, j)
+
+Não será O(n^2) mas sim O(a * b)
+
+Big O of Lists
+Para operações de inclusão e exclusão no final da lista, classifica-se como O(1).
+Ex.: my_list.append(number) e my_list.pop()
+
+Se está incluindo ou excluindo de um índice que não seja o final, a classificação será O(n), pois é preciso reindexar a lista
+Ex.: my_list.pop(index) e my_list.insert(index, number)
+
+Buscas por valor serão O(n) pois, no pior do casos, é preciso iterar por toda a lista
+Buscar por index serão O(1) pois é possível ir diretamente ao index solicitado
