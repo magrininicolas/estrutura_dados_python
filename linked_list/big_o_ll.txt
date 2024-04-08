@@ -1,0 +1,34 @@
+Big O Linked List
+head             tail
+11 -> 3 -> 23 -> 7
+
+Inserir um novo nó no fim da lista - O(1)
+Não importa quantos nós tenha na lista, o número de operações para inserir um elemento ao final da lista será sempre um
+
+Remover um item - O(n)
+É necessário percorrer toda a lista para encontrar o novo ponteiro que aponta para o novo último nó. Após isso, o ponteiro da cauda apontará para o novo último nó
+
+Inserir nós do começo da lista ligada - O(1)
+É necessário apenas dizer que o ponteiro head aponta para o novo nó e, este, aponta para o antigo primeiro nó
+
+Remover nós do começo da lista ligada - O(1)
+O ponteiro head irá apontar para o nó que o atual primeiro item aponta. Após isso, ele é removido
+
+Inserir no meio da lista ligada - O(n)
+É preciso iterar sob a lista até achar o ponto de inserção e refazer os devidos apontamentos. Como é necessário percorrer toda a lista no pior caso, O(n).
+
+Remover no meio da lista ligada - O(n)
+O conceito é o mesmo para a inserção, apenas muda que o item será removido.
+
+Procurar um item na lista ligada - O(n)
+Não existe uma forma de ir até o item diretamente, então é preciso percorrer pela lista até encontrar o alvo
+
+Resumo          Linked List vs Lists
+Append           O(1)           O(1)
+Pop              O(n)           O(1)
+Prepend          O(1)           O(n)
+Pop First        O(1)           O(n)
+Insert           O(n)           O(n)
+Remove           O(n)           O(n)
+Lookup by Index  O(n)           O(1)
+Lookup by Value  O(n)           O(n)
